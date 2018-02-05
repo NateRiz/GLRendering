@@ -3,16 +3,27 @@
 GLRender::GLRender(Camera* camera)
 {
     mCamera = camera;
+    mShader = new Shader("/home/nathan/Documents/CPPFiles/LLV2/shader.vert","/home/nathan/Documents/CPPFiles/LLV2/shader.frag");
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1,&VBO);
     glGenBuffers(1,&EBO);
-
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 
-    mShader = new Shader("/home/nathan/Documents/CPPFiles/LLV2/shader.vert","/home/nathan/Documents/CPPFiles/LLV2/shader.frag");
+    glGenVertexArrays(1,&mLightVAO);
+    glGenBuffers(1,&mLightVBO);
+    glBindVertexArray(mLightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, mLightVBO);
+
+
+
+
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
+
 
 }
 
@@ -49,6 +60,11 @@ void GLRender::ClearBuffers()
 
 void GLRender::DrawMesh()
 {
+
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
+
     mShader->use();
 
     glm::mat4 projection = glm::perspective(glm::radians(mCamera->Zoom), (float)800 / (float)600, 0.1f, 100.0f);
@@ -57,6 +73,8 @@ void GLRender::DrawMesh()
     mShader->setMat4("view", view);
     glm::mat4 model(1.0f);
     mShader->setMat4("model",model);
+    glm::vec3 light(1.0f,1.0f,1.0f);
+    mShader->setVec3("lightColor",light);
 
 
 

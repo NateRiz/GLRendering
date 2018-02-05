@@ -91,7 +91,7 @@ void Chunk::CreateCube(int x, int y, int z)
 
     unsigned int i1, i2, i3, i4, i5, i6, i7, i8;
 
-    const glm::vec4 RGBA = glm::vec4(0, (float)(((int) y *15 ) % 255 )/255.f, 0, 1.0);
+    const glm::vec4 RGBA(0.2f, 0.6f, 0.2f, 1.0f);//green
     //Front
     i1 = mRender->AddVertex(p7,RGBA);//bl
     i2 = mRender->AddVertex(p5,RGBA);//tl

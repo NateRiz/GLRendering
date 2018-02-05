@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     glrender.cpp \
     chunk.cpp \
     chunkmanager.cpp \
-    noiseutils.cpp
+    noiseutils.cpp \
+    mesh.cpp
 
 LIBS += -lglfw3 -lGL -lm -ldl -lXinerama -lXrandr -lXi -lXcursor -lX11 -lXxf86vm -lpthread -lnoise
 
@@ -23,8 +24,11 @@ HEADERS += \
     chunk.h \
     block.h \
     chunkmanager.h \
-    noiseutils.h
+    noiseutils.h \
+    mesh.h
 
 DISTFILES += \
     shader.vert \
-    shader.frag
+    shader.frag \
+    light.vert \
+    light.frag

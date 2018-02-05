@@ -19,11 +19,15 @@ public:
     void ClearBuffers();
 
 private:
+    Camera* mCamera;
+
     unsigned int VAO;
     unsigned int VBO;
     unsigned int EBO;
     Shader* mShader;
-    Camera* mCamera;
+
+    unsigned int mLightVAO;
+    unsigned int mLightVBO;
 
 
     static const unsigned int VERTEX_LENGTH = 7;
