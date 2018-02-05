@@ -14,26 +14,11 @@ public:
     GLRender(Camera*);
     ~GLRender();
     void DrawMesh();
-    unsigned int AddVertex(glm::vec3 pos, glm::vec4 color);
-    void AddTriangle(unsigned int, unsigned int, unsigned int);
+
     void ClearBuffers();
 
 private:
     Camera* mCamera;
-
-    unsigned int VAO;
-    unsigned int VBO;
-    unsigned int EBO;
-    Shader* mShader;
-
-    unsigned int mLightVAO;
-    unsigned int mLightVBO;
-
-
-    static const unsigned int VERTEX_LENGTH = 7;
-
-    std::vector<float> mVertices;
-    std::vector<unsigned int> mIndices;
 };
 
 #endif // GLRENDER_H

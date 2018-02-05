@@ -3,6 +3,7 @@
 
 #include "glrender.h"
 #include "block.h"
+#include "mesh.h"
 #include "noise/noise.h"
 #include "noiseutils.h"
 #include <utility>
@@ -24,8 +25,7 @@ public:
     static const int CHUNK_SIZE = 16;
 
 private:
-
-    Block** mBlocks;
+    Mesh mChunk();
     GLRender* mRender;
     std::pair<int,int> mWorldCoordinate;
 

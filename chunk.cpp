@@ -4,23 +4,11 @@ Chunk::Chunk(GLRender* render, std::pair<int,int> worldCoordinate)
 {
     mRender = render;
     mWorldCoordinate = worldCoordinate;
-    mBlocks = new Block*[CHUNK_SIZE];
-
-    for(unsigned int i = 0; i < CHUNK_SIZE; i++)
-    {
-        mBlocks[i] = new Block[CHUNK_SIZE];
-
-    }
 }
 
 Chunk::~Chunk()
 {
-    for (unsigned int i = 0; i < CHUNK_SIZE; i++)
-    {
 
-        delete [] mBlocks[i];
-    }
-    delete [] mBlocks;
 }
 
 std::pair<int,int> Chunk::GetWorldCoordinate()
