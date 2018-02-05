@@ -1,7 +1,10 @@
-# GLRendering\n\n
+# GLRendering
 
-Second Attempt at rendering and lighting.\n\n
+Second Attempt at rendering and lighting.
 
-Fixes for next attempt:\n
--Larger chunks than 16x16. Causes too many draw() calls & slows down too quickly.\n
--List of meshes rather than than render class with vao,vbo,ebo.\n
+Fixes for next attempt:
+
+-Larger chunks than 16x16. Causes too many draw() calls & slows down too quickly.
+
+-List of meshes rather than than render class with vao,vbo,ebo.
+
