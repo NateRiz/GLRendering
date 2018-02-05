@@ -64,6 +64,7 @@ void ChunkManager::UpdateChunksLoaded()
         if(mChunks[wrappedCoord]->GetWorldCoordinate() != coord)
         {
             mChunks[wrappedCoord]->SetWorldCoordinate(coord);
+            std::cout<<"Test";
         }
         mChunks[wrappedCoord]->CreateMesh();
     }
